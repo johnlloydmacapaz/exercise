@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() {
+  runApp(Rootpage());
+}
+
+class Rootpage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home:FirstPage(),
+    );
+    
+  }
+}
+
+class FirstPage extends StatelessWidget {
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text ("API")
+        ),
+      
+      body:Center (
+        child: ElevatedButton(
+          onPressed:(){
+            
+          },
+          child: Text("Go To Page 2")
+        )
+      )
+    );
+  }
+}
+
+class SecondPage extends StatefulWidget {
+  State<SecondPage> createState() => SecondPageState();
+}
+
+class SecondPageState extends State<SecondPage>{
+  
+  @override
+  Widget build (BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text ("2nd Page")
+      )
+    );
+    
+  }
+}
